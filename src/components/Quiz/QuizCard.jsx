@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Card } from 'react-bootstrap';
 import { getDataFromLocalStorage } from '../../utils/dataStorage';
-import { KEYS_IN_LOCAL_STORAGE } from '../../constants';
+import { KEYS_IN_LOCAL_STORAGE, QUIZ } from '../../constants';
 
 /**
  * @description Reusable component to display quiz cards
@@ -50,7 +50,7 @@ const QuizCard = ({
                                 <Card className='p-4 w-md-50'>
                                     <Card.Title>{title}</Card.Title>
                                     <Card.Body>
-                                        PermaLink: <b>{permaLink}</b> <img onClick={() =>  navigator.clipboard.writeText(permaLink)} className='icon-copy' src='./copyicon.png' />
+                                        PermaLink: <b>{permaLink}</b> <img onClick={() =>  navigator.clipboard.writeText(`${QUIZ.QUIZ_LINK}${permaLink}`)} className='icon-copy' src='./copyicon.png' />
                                     </Card.Body>
                                 </Card>
                             </div>
